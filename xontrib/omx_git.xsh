@@ -205,3 +205,4 @@ omx_git_aliases = {
     # additional aliases beyond what OMZ provided
     "gwho"                 : 'git config user.name && git config user.email'
 }
+aliases.update(omx_git_aliases)
