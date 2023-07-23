@@ -1,10 +1,10 @@
 # functions
 def git_find_branch(*branches):
     """Return the name of the first git branch found from the provided arg list"""
-    if !(commnad git rev-parse --git-dir all>/dev/null).returncode != 0:
+    if !(git rev-parse --git-dir all>/dev/null).returncode != 0:
         return
     for branch in branches:
-        if !(command git show-ref -q --verify refs/heads/@(branch)).returncode == 0:
+        if !(git show-ref -q --verify refs/heads/@(branch)).returncode == 0:
             return branch
 
 def git_main_branch(default="main"):
@@ -19,7 +19,7 @@ def git_dev_branch(default="develop"):
 
 def git_current_branch():
     """Return the current branch in the git repo"""
-    result = !(command git branch --show-current)
+    result = !(git branch --show-current)
     print(result)
 
 def _git_log_prettily(args):
